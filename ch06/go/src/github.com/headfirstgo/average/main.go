@@ -3,12 +3,14 @@ package main
 
 import (
 	"fmt"
-	"github.com/headfirstgo/datafile"
 	"log"
+	"os"
 )
 
 func main() {
-	numbers, err := datafile.GetFloats("data.txt")
+	path, err := os.Getwd()
+	fmt.Println("path", path)
+	numbers, err := datafile.GetFloats("ch06/go/bin/data.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
