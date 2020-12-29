@@ -1,10 +1,10 @@
 package magazine
 
 type Subscriber struct {
-	Name   string
-	Rate   float64
-	Active bool
-	Address
+	Name    string
+	Rate    float64
+	Active  bool
+	Address //anonymous fields
 }
 
 type Employee struct {
