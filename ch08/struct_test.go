@@ -12,6 +12,20 @@ func applyDiscount(s *subscriber) {
 	s.rate = 4.99 //(*s).rate 하지 않고 dot operator으로 struct에 접근하여 지정할 수 있다
 }
 
+func printInfo(s *subscriber) {
+	fmt.Println("Name:", s.name)
+	fmt.Println("Monthly Rate:", s.rate)
+	fmt.Println("Active?", s.active)
+}
+
+func defaultSubscriber(name string) *subscriber {
+	var s subscriber
+	s.name = name
+	s.rate = 5.99
+	s.active = true
+	return &s
+}
+
 func Example_struct_포인트_사용으로_값_변경() {
 	var s subscriber
 	applyDiscount(&s)
@@ -19,6 +33,23 @@ func Example_struct_포인트_사용으로_값_변경() {
 
 	//Output:
 	//4.99
+}
+
+func Example_struct_return_pointer() {
+	subscriber1 := defaultSubscriber("Aman Singh")
+	applyDiscount(subscriber1)
+	printInfo(subscriber1)
+
+	subscriber2 := defaultSubscriber("Brian Byan")
+	printInfo(subscriber2)
+
+	//Output:
+	//Name: Aman Singh
+	//Monthly Rate: 4.99
+	//Active? true
+	//Name: Brian Byan
+	//Monthly Rate: 5.99
+	//Active? true
 }
 
 func Example_int_pointer1() {
