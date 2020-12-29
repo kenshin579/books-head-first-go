@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/headfirstgo/keyboard"
+	//"github.com/headfirstgo/keyboard"
+	"github.com/kenshin579/keyboard"
 	"log"
 )
 

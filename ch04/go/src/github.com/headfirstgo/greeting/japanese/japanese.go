@@ -2,6 +2,6 @@ package japanese
 
 import "fmt"
 
-func Hello() {
+func Konichiwa() {
 	fmt.Println("konichiwa!")
 }
