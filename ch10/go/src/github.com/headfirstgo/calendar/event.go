@@ -7,7 +7,7 @@ import (
 
 type Event struct {
 	title string
-	Date
+	Date  //Date (anonymous field)는 여기에 embedded가 됨 (outer struct, Event에 inner struct로 인식됨)
 }
 
 func (e *Event) Title() string {
