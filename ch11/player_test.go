@@ -10,7 +10,7 @@ type Player interface {
 func TryOut(player Player) {
 	player.Play("Test Track")
 	player.Stop()
-	recorder, ok := player.(gadget.TapeRecorder)
+	recorder, ok := player.(gadget.TapeRecorder) //type assertion
 	if ok {
 		recorder.Record()
 	}
