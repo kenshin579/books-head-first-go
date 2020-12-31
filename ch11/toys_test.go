@@ -32,7 +32,7 @@ func play(n NoiseMaker) {
 	// n.Walk()
 }
 
-func main() {
+func Example_noisemaker() {
 	var toy NoiseMaker
 	toy = Whistle("Toyco Canary")
 	toy.MakeSound()
@@ -40,4 +40,21 @@ func main() {
 	toy.MakeSound()
 
 	play(Robot("Botco Ambler"))
+
+	//Output:
+	//Tweet!
+	//Honk!
+	//Beep Boop
+}
+
+func Example_walk() {
+	var noiseMaker NoiseMaker = Robot("Botco Ambler")
+	noiseMaker.MakeSound()
+	var robot Robot = noiseMaker.(Robot) //convert back to the concrete type using a type assertion
+	robot.Walk()
+
+	//Output:
+	//Beep Boop
+	//Powering legs
+
 }
