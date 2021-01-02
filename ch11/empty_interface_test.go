@@ -10,13 +10,18 @@ func (w Whistle) MakeSound() {
 
 func AcceptAnything(thing interface{}) {
 	fmt.Println(thing)
-	whistle, ok := thing.(Whistle)
+	whistle, ok := thing.(Whistle) //use a type assertion to get a Whistle
 	if ok {
 		whistle.MakeSound()
 	}
 }
 
-func main() {
+func Example_empty_interface1() {
 	AcceptAnything(3.1415)
 	AcceptAnything(Whistle("Toyco Canary"))
+
+	//Output:
+	//3.1415
+	//Toyco Canary
+	//Tweet!
 }
