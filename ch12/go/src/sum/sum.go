@@ -1,4 +1,4 @@
-package main
+package sum
 
 import (
 	"bufio"
@@ -38,8 +38,9 @@ func GetFloats(fileName string) ([]float64, error) {
 	return numbers, nil
 }
 
-func main() {
-	numbers, err := GetFloats(os.Args[1])
+func GetSumFromFile(fileName string) float64 {
+	//numbers, err := GetFloats(os.Args[1])
+	numbers, err := GetFloats(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -48,4 +49,5 @@ func main() {
 		sum += number
 	}
 	fmt.Printf("Sum: %0.2f\n", sum)
+	return sum
 }
