@@ -15,7 +15,7 @@ func reportPanic() {
 	if ok {
 		fmt.Println(err)
 	} else {
-		panic(p)
+		panic(p) //panic value값이 error가 아니면 다시 panic 을 하도록 함
 	}
 }
 
@@ -37,6 +37,9 @@ func scanDirectory(path string) {
 }
 
 func main() {
+	//path, _ := os.Getwd()
+	//fmt.Println("path", path)
 	defer reportPanic()
-	scanDirectory("go")
+	//panic("some other issue") // introduce a new panic (not an error)
+	scanDirectory("ch12/go")
 }
